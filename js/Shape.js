@@ -75,12 +75,12 @@ export default class Shape {
     //recenter pivot
     const box = new THREE.Box3().setFromObject(obj);
     const size = box.getSize(new THREE.Vector3());
+    console.log(size);
+
     const center = box.getCenter(new THREE.Vector3());
     obj.position.x += obj.position.x - center.x;
     obj.position.z += obj.position.z - center.z;
     //add material
-    obj.rotateX(0.5 * Math.PI);
-    obj.rotateY(rotation++);
     obj.castShadow = true;
     obj.receiveShadow = true;
     console.log(obj);
